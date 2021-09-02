@@ -1,0 +1,9 @@
+<script>
+    const year = Number(prompt('태어난 해를 입력하세요.'))
+    const kab = '경 신 임 계 갑 을 병 정 무 기'.split(' ')
+    const ja = '신 유 술 해 자 축 인 묘 진 사 오 미'.split(' ')
+    const kabSelct = year % 10
+    const jaSelct = year % 12
+
+    alert(`${year}년은 ${kab[kabSelct]} ${ja[jaSelct]} 년입니다.`)
+</script>
