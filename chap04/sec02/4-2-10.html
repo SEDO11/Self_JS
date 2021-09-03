@@ -1,0 +1,24 @@
+<script>
+    run = true
+    i = 1
+    /*
+    for (let i = 0; true; i++) {
+        alert(`${i}번째 반복문 입니다.`)
+
+        let isContinue = confirm('계속 하시겠습니까?')
+        if (!isContinue) {
+            break
+        }
+    }
+    */
+    while(run){
+        alert(`${i}번째 반복문 입니다.`)
+
+        let isContinue = confirm('계속 하시겠습니까?')
+        if (!isContinue) {
+            run = false
+        }
+        i += 1
+    }
+    alert('프로그램 종료')
+</script>
