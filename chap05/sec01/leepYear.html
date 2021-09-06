@@ -1,0 +1,10 @@
+<script>
+    const leepYear = function(year){
+        return (year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)
+    }
+
+    console.log(leepYear(1945))
+    console.log(leepYear(2000))
+    console.log(leepYear(1988))
+    console.log(leepYear(1700))
+</script>
