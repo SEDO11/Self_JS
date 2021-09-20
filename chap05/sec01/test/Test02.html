@@ -1,0 +1,46 @@
+<!-- 배열의 최댓값 구하기 -->
+
+<script>
+    // const max = function (array) {
+    //     let output = array[0]
+
+    //     for (const value of array) {
+    //         if(output < value){
+    //             output = value
+    //         }
+    //     }
+    //     return output
+    // }
+
+    // let arr = [1, 2, 3, 4]
+    // console.log(max(arr))
+    // console.log(max(1, 2, 3, 4))
+
+    // const max = function (...array) {
+    //     let output = array[0]
+
+    //     for (const value of array) {
+    //         if(output < value){
+    //             output = value
+    //         }
+    //     }
+    //     return output
+    // }
+
+    // console.log(max(1, 2, 3, 4))
+
+    const max = function (arr, ...array) {
+        let output
+        let items
+
+        for (const value of array) {
+            if(output < value){
+                output = value
+            }
+        }
+        return output
+    }
+    let arr = [1, 2, 3, 4]
+    console.log(max(arr))
+    console.log(max(1, 2, 3, 4))
+</script>

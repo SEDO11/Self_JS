@@ -1,0 +1,14 @@
+<!-- a부터 b까지의 값 모두 곱하기 -->
+<script>
+    const plus = function(a, b){
+        let output = 1
+        for (let i = a; i <= b; i++) {
+            output *= i
+        }
+        return output
+    }
+
+    let a = Number(prompt('a의 값'))
+    let b = Number(prompt('b의 값'))
+    alert(plus(a, b))
+</script>

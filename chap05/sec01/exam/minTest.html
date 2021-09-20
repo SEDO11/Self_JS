@@ -1,0 +1,21 @@
+<script>
+    function min(array) {
+        let output = array[0]
+
+        for (const value of array) {
+            if(output > value){
+                output = value
+            }
+        }
+        // for (let i = 0; i < array.length; i++) {
+        //     if(output > array[i]){
+        //         output = array[i]
+        //     }
+        // }
+        return output
+    }
+
+    let arr = [10, 20, 30, 60, 40, 5, 1]
+
+    alert(min(arr))
+</script>

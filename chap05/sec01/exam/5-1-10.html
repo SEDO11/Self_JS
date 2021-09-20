@@ -1,0 +1,27 @@
+<!-- 매개변수의 자료형에 따라 다르게 작동하는 min() 함수 -->
+
+<script>
+    function min(first, ...rest){
+
+        let output
+        let items
+
+        if(Array.isArray(first)){
+            output = first[0]
+            items = first
+        } else if(typeof(first) === 'number'){
+            output = first
+            items = rests
+        }
+
+        for (const value of items) {
+            if(output > value){
+                output = value
+            }
+        }
+        return output
+    }
+
+    console.log(`min(배열): ${min([52, 273, 32, 103, 275, 24, 57])}`)
+    console.log(`min(숫자, ...)): ${min([52, 273, 32, 103, 275, 24, 57])}`)
+</script>
