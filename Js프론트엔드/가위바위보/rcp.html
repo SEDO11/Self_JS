@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위, 바위, 보 게임 만들기</title>
+</head>
+<body>
+    <script>
+        // 컴퓨터의 가위, 바위, 보 선택을 위해 0~2까지의 난수 발생
+        let game = true
+        while(game) {
+
+            let comNum = Math.floor(Math.random() * 3);
+            let comSelect
+            if(comNum === 0) {
+                comSelect = '가위'
+            } else if (comNum === 1) {
+                comSelect = '바위'
+            } else if (comNum === 2) {
+                comSelect = '보'
+            }
+
+            let mySelect = prompt('가위, 바위, 보 중에서 하나를 입력하세요')
+            console.log(comSelect)
+
+            if (comSelect === '가위'){
+                if(mySelect === comSelect) {
+                    alert('컴퓨터:' + comSelect +', 컴퓨터와 비겼습니다')
+                } else if(mySelect === '바위') {
+                    alert('컴퓨터:' + comSelect +', 컴퓨터를 이겼습니다')
+                } else {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터 한테 졌습니다')
+                }
+            } else if (comSelect === '바위'){
+                if(mySelect === comSelect) {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터와 비겼습니다')
+                } else if(mySelect === '보') {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터를 이겼습니다')
+                } else {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터 한테 졌습니다')
+                }
+            } else {
+                if(mySelect === comSelect) {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터와 비겼습니다')
+                } else if(mySelect === '가위') {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터를 이겼습니다')
+                } else {
+                    alert('컴퓨터: ' + comSelect +', 컴퓨터 한테 졌습니다')
+                }
+            }
+            game = confirm('게임을 계속하시겠습니까?')
+        }
+    </script>
+</body>
+</html>
