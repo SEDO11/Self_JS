@@ -1,57 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가위, 바위, 보 게임 만들기</title>
 </head>
+
 <body>
     <script>
-        // 컴퓨터의 가위, 바위, 보 선택을 위해 0~2까지의 난수 발생
-        let game = true
-        while(game) {
+        let game = true // 게임 시작
+        const ROCK = '바위'
+        const SCIS = '가위'
+        const PAPER = '보'
+        while (game) {
 
-            let comNum = Math.floor(Math.random() * 3);
-            let comSelect
-            if(comNum === 0) {
-                comSelect = '가위'
+            let comNum = Math.floor(Math.random() * 3);  // 컴퓨터의 가위, 바위, 보 선택을 위해 0~2까지의 난수 발생
+            let comSelect // 컴퓨터의 선택을 받을 변수
+            if (comNum === 0) {
+                comSelect = SCIS
             } else if (comNum === 1) {
-                comSelect = '바위'
-            } else if (comNum === 2) {
-                comSelect = '보'
+                comSelect = ROCK
+            } else { //comNum === 2
+                comSelect = PAPER
             }
 
             let mySelect = prompt('가위, 바위, 보 중에서 하나를 입력하세요')
             console.log(comSelect)
+            // if (mySelect !== SCIS && mySelect !== ROCK && mySelect !== PAPER) { // 가위, 바위, 보 중에서 다른 것을 입력했을 때
+            //     alert('가위, 바위, 보 중에서 하나를 입력해주세요')
+            // } else { // 가위, 바위, 보 중에서 입력을 했을 때
+            //     if (comSelect === SCIS) { //컴퓨터가 가위를 낸 경우
+            //         if (mySelect === comSelect) {
+            //             alert('컴퓨터:' + comSelect + ', 컴퓨터와 비겼습니다')
+            //         } else if (mySelect === ROCK) {
+            //             alert('컴퓨터:' + comSelect + ', 컴퓨터를 이겼습니다')
+            //         } else {
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+            //         }
 
-            if (comSelect === '가위'){
-                if(mySelect === comSelect) {
-                    alert('컴퓨터:' + comSelect +', 컴퓨터와 비겼습니다')
-                } else if(mySelect === '바위') {
-                    alert('컴퓨터:' + comSelect +', 컴퓨터를 이겼습니다')
-                } else {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터 한테 졌습니다')
-                }
-            } else if (comSelect === '바위'){
-                if(mySelect === comSelect) {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터와 비겼습니다')
-                } else if(mySelect === '보') {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터를 이겼습니다')
-                } else {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터 한테 졌습니다')
-                }
-            } else {
-                if(mySelect === comSelect) {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터와 비겼습니다')
-                } else if(mySelect === '가위') {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터를 이겼습니다')
-                } else {
-                    alert('컴퓨터: ' + comSelect +', 컴퓨터 한테 졌습니다')
-                }
+            //     } else if (comSelect === ROCK) { //컴퓨터가 바위를 낸 경우
+            //         if (mySelect === comSelect) {
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+            //         } else if (mySelect === PAPER) {
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+            //         } else {
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+            //         }
+
+            //     } else { //comSelect === PAPER
+            //         if (mySelect === comSelect) { // 컴퓨터가 보를 낸 경우
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+            //         } else if (mySelect === SCIS) {
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+            //         } else {
+            //             alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+            //         }
+            //     }
+            //     game = confirm('게임을 계속하시겠습니까?') // true는 계속, false는 중단
+            // }
+
+            // switch문으로 변환된 코드
+            switch (mySelect) {
+                case SCIS:
+                    switch (comSelect) {
+                        case SCIS:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+                            break
+                        case PAPER:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+                            break
+                        default:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+                            break
+                    }
+                    game = confirm('게임을 계속하시겠습니까?')
+                    break
+                case ROCK:
+                    switch (comSelect) {
+                        case ROCK:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+                            break
+                        case SCIS:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+                            break
+                        default:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+                            break
+                    }
+                    game = confirm('게임을 계속하시겠습니까?')
+                    break
+                case PAPER:
+                    switch (comSelect) {
+                        case PAPER:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+                            break
+                        case ROCK:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+                            break
+                        default:
+                            alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+                            break
+                    }
+                    game = confirm('게임을 계속하시겠습니까?')
+                    break
+                default:
+                    alert('가위, 바위, 보 중에서 하나를 입력해주세요')
+                    break
             }
-            game = confirm('게임을 계속하시겠습니까?')
         }
     </script>
 </body>
+
 </html>
