@@ -11,10 +11,11 @@ function counter(sel) { // 승, 패 , 무 전적을 알려주는 함수
             winC += 1
             break
         case DRAW:
-            drawC += 1 
+            drawC += 1
             break
         default:
             lossC += 1
+
             break
     }
     console.log('승: ' + winC + ', 패: ' + lossC + ', 무: ' + drawC)
@@ -38,41 +39,45 @@ function game(mySelect) { // 게임을 실행 할 수 있도록 하는 함수
     if (mySelect !== SCIS && mySelect !== ROCK && mySelect !== PAPER) { // 가위, 바위, 보 중에서 다른 것을 입력했을 때
         alert('가위, 바위, 보 중에서 하나를 입력해주세요')
     } else { // 가위, 바위, 보 중에서 입력을 했을 때
+        const COM = 'com'
+        let result = COM + ': ' + comSelect + ', ' + COM // 결과값 저장 변수
+
         if (comSelect === SCIS) { //컴퓨터가 가위를 낸 경우
             if (mySelect === comSelect) {
-                alert('컴퓨터:' + comSelect + ', 컴퓨터와 비겼습니다')
+                result += '와 비겼습니다'
                 counter(DRAW)
             } else if (mySelect === ROCK) {
-                alert('컴퓨터:' + comSelect + ', 컴퓨터를 이겼습니다')
+                result += '를 이겼습니다'
                 counter(WIN)
             } else {
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+                result += '한테 졌습니다'
                 counter(LOSS)
             }
 
         } else if (comSelect === ROCK) { //컴퓨터가 바위를 낸 경우
             if (mySelect === comSelect) {
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+                result += '와 비겼습니다'
                 counter(DRAW)
             } else if (mySelect === PAPER) {
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+                result += '를 이겼습니다'
                 counter(WIN)
             } else {
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+                result += '한테 졌습니다'
                 counter(LOSS)
             }
 
         } else { //comSelect === PAPER
             if (mySelect === comSelect) { // 컴퓨터가 보를 낸 경우
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터와 비겼습니다')
+                result += '와 비겼습니다'
                 counter(DRAW)
             } else if (mySelect === SCIS) {
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터를 이겼습니다')
+                result += '를 이겼습니다'
                 counter(WIN)
             } else {
-                alert('컴퓨터: ' + comSelect + ', 컴퓨터 한테 졌습니다')
+                result += '한테 졌습니다'
                 counter(LOSS)
             }
         }
+        alert(result)
     }
 }
