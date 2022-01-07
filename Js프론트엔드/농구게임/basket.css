@@ -1,0 +1,45 @@
+.scoreboard {
+    width: 400px;
+    background-color: green;
+    text-align: center;
+    padding: 2px;
+    color: white;
+}
+
+.scoreboard_inner {
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.shots_left {
+    margin: 10px 0 0 0; /* 상 우 하 좌 순서로 입력*/
+}
+
+#shotsLeft {
+    background-color: black;
+    padding:  4px 4px 2px 2px;
+}
+
+.score {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 10px 40px 5px 0;
+}
+
+.score_name {
+    font-size: 20px;
+}
+
+.score_number {
+    font-size: 40px;
+    color: yellow;
+    background-color: black;
+    width: 100%;
+    line-height: 40px;
+    padding-top: 5px;
+    margin-top: 2px;
+}
+
+#text {
+    height: 30px;
+}
