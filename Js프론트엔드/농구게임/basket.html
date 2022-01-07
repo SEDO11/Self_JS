@@ -8,9 +8,13 @@
     <title>농구 게임</title>
 </head>
 <body>
-    <section class="scoreboard">
-        <article class="scoreboard_inner">
-            <div class="shosts_left">
+    <header>
+        <h1>농구 게임</h1>
+    </header>
+
+    <section>
+        <article>
+            <div class="shots_left">
                 <span>남은 슛 횟수</span>
                 <span id="shotsLeft">15</span> <!-- 남은 슛 횟수 -->
             </div>
@@ -27,5 +31,19 @@
             <p id="text">컴퓨터부터 시작합니다!</p> <!-- 안내 문구 -->
         </article>
     </section>    
+
+    <footer>
+        <div id="computer" class="panel">
+            <p class="control_name">컴퓨터</p>
+            <button onclick="onComputerShoot()">슛하기</button>
+        </div>
+
+        <div id="user" class="panel">
+            <p class="control_name">사용자</p>
+            <button onclick="onUserShoot2()">2점슛</button>
+            <button onclick="onUserShoot3()">3점슛</button>
+        </div>
+    </footer>
+    <script src="basket.js"></script>
 </body>
 </html>

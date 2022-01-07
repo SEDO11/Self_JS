@@ -1,4 +1,14 @@
-.scoreboard {
+/* header */
+header {
+    text-align: center;
+    background-color: yellowgreen;
+    color: white;
+    width: 400px;
+    padding: 2px;
+}
+
+/* section */
+section {
     width: 400px;
     background-color: green;
     text-align: center;
@@ -6,13 +16,13 @@
     color: white;
 }
 
-.scoreboard_inner {
+article {
     border: 2px solid white;
-    box-sizing: border-box;
+    box-sizing: border-box; /*박스의 크기가 범위를 벗어나지 못하게 하는 코드*/
 }
 
 .shots_left {
-    margin: 10px 0 0 0; /* 상 우 하 좌 순서로 입력*/
+    margin: 10px 0 5px 0; /* 상 우 하 좌 순서로 입력*/
 }
 
 #shotsLeft {
@@ -23,7 +33,7 @@
 .score {
     display: inline-block;
     border: 1px solid white;
-    padding: 10px 40px 5px 0;
+    padding: 0 50px;
 }
 
 .score_name {
@@ -42,4 +52,36 @@
 
 #text {
     height: 30px;
+}
+
+/* footer */
+footer { 
+    width: 400px;
+    background-color: gray;
+    text-align: center;
+    padding: 2px;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+button:hover { /* 버튼에 마우스를 올렸을 경우 디자인이 바뀌도록 설정 */
+    cursor: pointer; /* 마우스 커서 모양 변경 */
+    background-color: green; /* 버튼 배경 색상 변경 */
+    color: white; /* 버튼 텍스트 색상 변경 */
+    font-weight: bold; /*버튼 굵기 변경 */
+}
+
+.panel {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+.control_name {
+    font-size: 20px;
+    margin-bottom: 5px;
 }
