@@ -1,0 +1,57 @@
+header {
+    width: 400px;
+    background-color: yellowgreen;
+    text-align: center;
+    color: white;
+    padding: 10px 5px;
+}
+
+section {
+    width: 400px;
+    background-color: green;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.left {
+    padding: 10px;
+}
+
+.secArt {
+    box-sizing: border-box;
+    border: solid white 2px;
+}
+
+.count {
+    color: yellow;
+    background-color: black;
+    padding: 2px;
+}
+
+.score_play {
+    display: inline-block;
+    border: white solid 1px;
+    width: 80px;
+    padding: 30px;
+}
+
+footer {
+    width: 400px;
+    background-color: goldenrod;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+button {
+    font-size: 18px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}

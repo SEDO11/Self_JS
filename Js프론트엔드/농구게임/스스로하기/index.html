@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>가위 바위 보 게임</title>
+</head>
+
+<body>
+    <script src="index.js"></script>
+    <header>
+        <h1>농구 게임</h1>
+    </header>
+    <section>
+        <div class="secArt">
+            <article class="left">
+                <span>남은 슛 횟수</span>
+                <span id="leftCount" class="count">15</span>
+            </article>
+
+            <article class="score_play">
+                <p>컴퓨터</p>
+                <p id="comScore" class="count">0</p>
+            </article>
+
+            <article class="score_play">
+                <p>유저</p>
+                <p id="userScore" class="count">0</p>
+            </article>
+
+            <p id="textMessage">컴퓨터가 선공입니다.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="score_play">
+            <p>컴퓨터</p>
+            <button onclick="com()">슛하기</button>
+        </div>
+
+        <div class="score_play">
+            <p>사용자</p>
+            <button onclick="user()">슛하기</button>
+        </div>
+    </footer>
+</body>
+
+</html>
