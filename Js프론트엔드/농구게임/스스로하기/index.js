@@ -1,29 +1,37 @@
-const ROCK = '바위'
-const SCI = '가위'
-const PAPER = '보'
+const SCORE1 = 0
+const SCORE2 = 2
+const SCORE3 = 3
 
-let comSelect = ''
-let userSelect = ''
+let comSelect = 0
+let userSelect = 0
+let leftCount = document.getElementById('leftCount')
+let comScore = document.getElementById('comScore')
+let userScore = document.getElementById('userScore')
 
-function com() {
-    let leftCount = document.getElementById('leftCount')
-    let NumLC = parseInt(leftCount)
-    console.log('버튼 확인')
-    if (NumLC % 2 === 1) {
-        let select = Math.floor(Math.random())
-        comSelect = select <= 0.3 ? SCI : select <= 0.6 ? ROCK : PAPER
-        leftCount.innerHTML = NumLC - 1
-        console.log(NumLC)
-    }
+function gameOver() {
+    alert('게임이 종료 되었습니다.')
 }
 
-function user() {
-    let leftCount = document.getElementById('leftCount')
-    let NumLC = parseInt(leftCount)
-    console.log('버튼 확인')
-    if (NumLC % 2 === 0) {
-        let select = Math.floor(Math.random())
-        comSelect = select < 0.3 ? SCI : select < 0.6 ? ROCK : PAPER
+function gameAlert() {
+    alert('차례가 아닙니다.')
+}
+
+function gameStart(name) {
+    let NumLC = parseInt(leftCount.innerText)
+    let NumCS = parseInt(comScore.innerText)
+    let NumUS = parseInt(userScore.innerText)
+    let select = Math.random()
+    if(NumLC === 0) { /* 남은 횟수가 0일때 */
+        gameOver()
+    } else if (NumLC % 2 === 1 && name === 'com') { /* 컴퓨터일때*/
+        comSelect = select <= 0.3 ? SCORE1 : select <= 0.6 ? SCORE2 : SCORE3
+        comScore.innerHTML = NumCS + comSelect
         leftCount.innerHTML = NumLC - 1
+    } else if (NumLC % 2 === 0 && name === 'user') { /* 유저일때*/
+        userSelect = select < 0.3 ? SCORE1 : select < 0.6 ? SCORE2 : SCORE3
+        userScore.innerHTML = NumUS + userSelect
+        leftCount.innerHTML = NumLC - 1
+    } else { /* 차례가 아닐때 */
+        gameAlert()
     }
 }

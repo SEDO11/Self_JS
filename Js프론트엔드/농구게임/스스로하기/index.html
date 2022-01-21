@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <script src="index.js"></script>
     <header>
         <h1>농구 게임</h1>
     </header>
@@ -37,14 +36,15 @@
     <footer>
         <div class="score_play">
             <p>컴퓨터</p>
-            <button onclick="com()">슛하기</button>
+            <button onclick="gameStart('com')">슛하기</button>
         </div>
 
         <div class="score_play">
             <p>사용자</p>
-            <button onclick="user()">슛하기</button>
+            <button onclick="gameStart('user')">슛하기</button>
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
